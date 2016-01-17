@@ -1,3 +1,9 @@
+# Directories
+./Project/Saved/*
+./Project/Intermediate/*
+./Project/Build/*
+./Project/Saved/*
+
 # Compiled Object files
 *.slo
 *.lo
