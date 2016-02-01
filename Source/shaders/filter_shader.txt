@@ -1,0 +1,18 @@
+float2 uv = UV;
+float3 colour = Colour;
+float2 size = Size;
+
+float grayscale = (0.299 * colour.r + 0.587 * colour.g + 0.114 * colour.b);
+
+float2 position = uv * size;
+
+float ordering[4][4] = {
+    { 1, 9, 3, 11 },
+    { 13, 5, 15, 7 },
+    { 4, 12, 2, 10 },
+    { 16, 8, 14, 6 }
+};
+
+float pixel = grayscale + (grayscale * ordering[position.y % 4][position.x % 4]);
+
+return float3(pixel, pixel, pixel);
